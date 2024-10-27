@@ -1,0 +1,77 @@
+<div class="bg">
+  <div class="parrent">
+    <div class="child">
+      <div nz-col>
+        <h1 style="margin-left: 55px">Client Signup</h1>
+      </div>
+
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This input is not a valid name!">
+            <input nz-input placeholder=" Firstname" formControlName="name" id="name">
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This input is not a valid last name!">
+            <input nz-input placeholder="lastname" formControlName="lastname" id="lastname">
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This input is not a valid phone number!">
+            <input nz-input placeholder="phone number" formControlName="phone" id="phone">
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This input is not a valid email!">
+            <input nz-input placeholder="Email" formControlName="email" id="email">
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This input is not a valid password!">
+
+            <input nz-input type="password" placeholder="Confirm Password" formControlName="password" id="password" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This input is not a valid password!">
+            <input nz-input type="password" placeholder="Confirm Password" formControlName="checkPassword"
+              id="checkPassword">
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- <nz-form-item>
+          <nz-form-control nzHasFeedback *ngIf="password?.errors as passwordErrors" [nzErrorTip]="
+              passwordErrors['required'] ? 'Password is required!' :
+              passwordErrors['pattern'] ? 'Password must contain at least 8 characters, with uppercase, lowercase, and a digit.' :
+              undefined">
+
+            <input nz-input type="password" placeholder="Password" formControlName="password" id="password" />
+          </nz-form-control>
+        </nz-form-item> -->
+
+        <!-- <nz-form-item>
+          <nz-form-control nzHasFeedback *ngIf="checkPassword?.errors || validateForm.hasError('mismatch')"
+            [nzErrorTip]="
+            checkPassword?.hasError('required') ? 'Confirm Password is required!' :
+            validateForm.hasError('mismatch') ? 'Passwords do not match!' :
+            undefined">
+
+            <input nz-input type="password" placeholder="Confirm Password" formControlName="checkPassword"
+              id="checkPassword" />
+          </nz-form-control>
+        </nz-form-item> -->
+
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+          [disabled]="validateForm.invalid">Register</button>
+
+        or <a routerLink="/login">login now</a>
+      </form>
+    </div>
+  </div>
+</div>
